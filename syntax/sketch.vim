@@ -8,11 +8,11 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword basicLanguageKeywords struct for while if else repeat minrepeat
+syn keyword basicLanguageKeywords for while if else repeat minrepeat new
 syn keyword preproc define
 syn keyword types bit int char void
 syn keyword const false true
-syn keyword operators ref assert assume pragma harness return
+syn keyword operators ref assert assume pragma harness return generator
 
 syn region string start=/\v"/ skip=/\v\./ end=/\v"/
 syn match       cNumbers        display transparent "\<\d\|\.\d" contains=cNumber
@@ -35,6 +35,7 @@ hi def link cCustomFunc  Function
 let b:current_syntax = "sketch"
 
 hi def link basicLanguageKeywords   Statement
+hi def link cStructure   Statement
 hi def link lnComment 	Comment
 hi def link blkComment 	Comment
 hi def link const	Constant
